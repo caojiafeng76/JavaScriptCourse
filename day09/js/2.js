@@ -18,9 +18,9 @@ console.log(p2.hasOwnProperty('toString'));//=>false 因为不是私有属性，
 
 //写一个方法检测是否是一个实例的公有属性
 function hasPubProperty(obj, attr) {
-    if (!(attr in obj)) {
-        return false;
-    }
+    // if (!(attr in obj)) {
+    //     return false;
+    // }
     return !obj.hasOwnProperty(attr);
 }
 var result = hasPubProperty(p1,'toString');
