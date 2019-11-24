@@ -19,7 +19,7 @@
 // console.log(fnAvg(1, 2, 4, 5, 6, 9));
 
 function f() {
-    let ary = [].slice.call(arguments, 0);
+    let ary = [].slice.call(arguments);
     console.log(ary);
 }
 
