@@ -49,7 +49,7 @@ let productRender = (function () {
                 });
                 this.flag *= -1;
                 let ary = ['data-time', 'data-price', 'data-hot'];
-                productList = [].slice.call(productList);//将类数组productList转化为数组 
+                productList = [].slice.call(productList); //将类数组productList转化为数组 
                 productList.sort((a, b) => {
                     let aInn = a.getAttribute(ary[index]),
                         bInn = b.getAttribute(ary[index]);
