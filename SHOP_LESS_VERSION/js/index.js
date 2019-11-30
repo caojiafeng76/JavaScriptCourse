@@ -7,10 +7,10 @@ let productRender = (function () {
     //从服务器获取数据
     let getData = function () {
         let xhr = new XMLHttpRequest;
-        xhr.open('GET', 'json/product.json', false);//异步获取
+        xhr.open('GET', 'json/product.json', false); //异步获取
         xhr.onreadystatechange = function () {
             if (xhr.readyState === 4 && xhr.status === 200) {
-                productData = JSON.parse(xhr.responseText);//把从服务器获取的json格式字符串转换为对象，方便后继操作
+                productData = JSON.parse(xhr.responseText); //把从服务器获取的json格式字符串转换为对象，方便后继操作
             }
         };
         xhr.send(null);
@@ -18,7 +18,13 @@ let productRender = (function () {
     //绑定html数据
     let bindHTML = function () {
         let str = ``;
-        productData.forEach(({title, price, hot, time, img}, index) => {
+        productData.forEach(({
+            title,
+            price,
+            hot,
+            time,
+            img
+        }, index) => {
             str += `<li data-time="${time}" data-hot="${hot}" data-price="${price}"><a href="#">
                 <img src="${img}" alt="">
                 <p title="${title}">${title}</p>
@@ -36,13 +42,14 @@ let productRender = (function () {
             curLink.flag = -1;
             curLink.onclick = function () {
                 linkList.forEach(item => {
+                    //如果当前点击的不是这一项，该项的flag重置为-1
                     if (item !== this) {
                         item.flag = -1;
                     }
                 });
                 this.flag *= -1;
                 let ary = ['data-time', 'data-price', 'data-hot'];
-                productList = [].slice.call(productList);
+                productList = [].slice.call(productList);//将类数组productList转化为数组 
                 productList.sort((a, b) => {
                     let aInn = a.getAttribute(ary[index]),
                         bInn = b.getAttribute(ary[index]);
