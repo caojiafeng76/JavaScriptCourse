@@ -59,8 +59,20 @@ let utils = (function () {
             top: curTop
         };
     };
+    //=>操作浏览器盒子模型属性的
+    let winHandle = function (attr, value) {
+        if (typeof value !== 'undefined') {
+            document.documentElement[attr] = value;
+            document.body[attr] = value;
+            return;
+
+        }
+        return document.documentElement[attr] || document.body[attr];
+
+    };
     return {
         css,
         offSet,
+        winHandle
     };
 })();
