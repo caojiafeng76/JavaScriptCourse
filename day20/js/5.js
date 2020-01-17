@@ -1,4 +1,4 @@
-~function () {
+~ function () {
     function replace(reg, callbackFn) {
         if (!reg instanceof RegExp) {
             return;
@@ -15,5 +15,3 @@
 
     String.prototype.myReplace = replace;
 }();
-console.log('zhufengpeixun2020'.myReplace(/\d+/, (...args) => {
-    console.log(args);}));
