@@ -23,11 +23,9 @@ let $container = $('.container'),
     $window = $(window);
 //造点假数据
 let str = ``;
-new Array(20).fill(null).forEach(item => {
-    str += `<div class="imgBox">
+new Array(20).fill(null).forEach(item => str += `<div class="imgBox">
         <img src="" alt="" img-data="http://www.zhufengpeixun.cn/main/img/banner10.png">
-    </div>`;
-});
+    </div>`);
 $container.html(str);
 $imgBoxs = $container.children('.imgBox');
 
