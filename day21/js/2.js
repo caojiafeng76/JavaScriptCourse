@@ -33,17 +33,15 @@ $imgBoxs = $container.children('.imgBox');
 
 //多张图片延迟加载
 $window.on('load scroll', () => {
-            let $B = $window.scrollTop() + $window.outerHeight();
+    let $B = $window.scrollTop() + $window.outerHeight();
     $imgBoxs.each((index, item) => {
         let $item = $(item),
             $itemA = $item.outerHeight() + $item.offset().top,
             $img = $item.children('img');
         if ($itemA <= $B) {
-            $img.attr('isLoad', 'True');
+            $img.attr('isLoad', true);
             $img.attr('src', $img.attr('img-data'));
-            $img.on('load', function () {
-                $img.stop().fadeIn();
-            });
+            $img.on('load', () => $img.stop().fadeIn());
         }
     });
-            });
+});
