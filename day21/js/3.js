@@ -98,34 +98,47 @@
 
 */
 
-function Dog(name) {
-    this.name = name;
-}
-Dog.prototype.braking = function () {
-    console.log('wangwang');
+// function Dog(name) {
+//     this.name = name;
+// }
+// Dog.prototype.braking = function () {
+//     console.log('wangwang');
 
-};
-Dog.prototype.sayHi = function () {
-    console.log("I'm" + this.name + "");
+// };
+// Dog.prototype.sayHi = function () {
+//     console.log("I'm" + this.name + "");
 
-};
+// };
 
-function _new(fn, ...arg) {
-    let obj = Object.create(fn.prototype);
-    fn.call(obj, ...arg);
-    return obj;
-}
-let sanmao = _new(Dog, '三毛');
-sanmao.braking();
-sanmao.sayHi();
-console.log(sanmao instanceof Dog);
+// function _new(fn, ...arg) {
+//     let obj = Object.create(fn.prototype);
+//     fn.call(obj, ...arg);
+//     return obj;
+// }
+// let sanmao = _new(Dog, '三毛');
+// sanmao.braking();
+// sanmao.sayHi();
+// console.log(sanmao instanceof Dog);
 
 
 
 //合并两个数组，并按指定顺序排序
-// let arr1 = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'],
-//     arr2 = ['A', 'B', 'C', 'D'];
+let arr1 = ['A1', 'A2', 'B1', 'B2', 'C1', 'C2', 'D1', 'D2'],
+    arr2 = ['A', 'B', 'C', 'D'];
 // arr2 = arr2.map(item => item + '3');
 // let arr = arr1.concat(arr2).sort((a, b) => a.localeCompare(b));
 // arr = arr.map(item => item.replace('3', ''));
 // console.log(arr);
+
+// let n = 0;
+// for (let i = 0; i < arr2.length; i++) {
+//     const item2 = arr2[i];
+//     for (let j = 0; j < arr1.length; j++) {
+//         const item1 = arr1[j];
+//         if (item1.includes(item2)) {
+//             n = j;
+//         }
+//     }
+//     arr1.splice(n + 1, 0, item2);
+// }
+// console.log(arr1);
