@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 100px;
+            height: 100px;
+            border: 1px solid #333333;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box"></div>
+    <script>
+        let oBox = document.querySelector('#box'),
+            clientWidth = document.documentElement.clientWidth || document.body.clientWidth,
+            clientHeight = document.documentElement.clientHeight || document.body.clientHeight,
+            oClientWidth = oBox.clientWidth,
+            log = console.log.bind(console.log),
+            oClientHeight = oBox.clientHeight;
+        oBox.style.marginLeft = (clientWidth - oClientWidth) / 2 + 'px';
+        oBox.style.marginTop = (clientHeight - oClientHeight) / 2 + 'px';
+        //获取元素指定属性的样式值
+        let getCss = function (curEle, attr) {
+            if (!'getComputedStyle' in window) {
+                return;
+            }
+            let val = window.getComputedStyle(curEle, null)[attr];
+            //去掉 单位
+            let reg = /^-?\d+(\.\d+)?(px|rem|em|pt)?$/i;
+            return reg.test(val) ? parseFloat(val) : val;
+        };
+        log(getCss(oBox, 'width'));
+    </script>
+</body>
+
+</html>
