@@ -77,7 +77,7 @@ let arr = [12, 11, 13, 9, 10, 87, 67, 53];
 //快速排序
 function quick(ary) {
     //循环结束条件
-    if (ary.length <= 0) return ary;
+    if (ary.length <= 1) return ary;
     //找到中间项，并在原有数组中把他移除
     let middleIndex = Math.floor(ary.length / 2),//获取中间项的索引
         middleValue = ary.splice(middleIndex, 1)[0]; //把中间项删除并储存在middleValue中
