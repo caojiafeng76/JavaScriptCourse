@@ -51,23 +51,31 @@ let arr = [12, 11, 13, 9, 10, 87, 67, 53];
 
 
 
-//冒泡排序
-function insert(arr) {
-    let handle = [];
-    handle.push(arr[0]);
-    for (let i = 1; i < arr.length; i++) {
-        let A = arr[i];
-        for (let j = handle.length - 1; j >= 0; j--) {
-            let B = handle[j];
-            if (A > B) {
-                handle.splice(j + 1, 0, A);
-                break;
-            }
-            if (j===0) {
-                handle.unshift(A);
-            }
-        }
-    }
-    return handle;
+//插入排序
+// function insert(arr) {
+//     let handle = [];
+//     handle.push(arr[0]);
+//     for (let i = 1; i < arr.length; i++) {
+//         let A = arr[i];
+//         for (let j = handle.length - 1; j >= 0; j--) {
+//             let B = handle[j];
+//             if (A > B) {
+//                 handle.splice(j + 1, 0, A);
+//                 break;
+//             }
+//             if (j===0) {
+//                 handle.unshift(A);
+//             }
+//         }
+//     }
+//     return handle;
+// }
+// console.log(insert(arr));
+
+
+
+//快速排序
+function quick() {
+    //找到中间项，并在原有数组中把他移除
+    
 }
-console.log(insert(arr));
