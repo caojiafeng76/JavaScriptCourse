@@ -11,7 +11,7 @@ let bannerRender = (function() {
   let queryData = () => {
     return new Promise((resolve, reject) => {
       let xhr = new XMLHttpRequest();
-      xhr.open("GET", "json/banner.json");
+      xhr.open("GET", "json/banner.json"); //第三个参数不传默认是异步的
       xhr.onreadystatechange = () => {
         if (xhr.readyState === 4 && xhr.status === 200) {
           let data = JSON.parse(xhr.responseText);
@@ -152,3 +152,6 @@ let bannerRender = (function() {
   };
 })();
 bannerRender.init();
+
+
+
